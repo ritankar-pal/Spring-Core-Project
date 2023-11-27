@@ -38,6 +38,26 @@ public class CustomerDTO {
 	public void setTime(Float time) {
 		this.time = time;
 	}
+	
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public Float getPamt() {
+		return pamt;
+	}
+
+	public Float getRate() {
+		return rate;
+	}
+
+	public Float getTime() {
+		return time;
+	}
 
 	@Override
 	public String toString() {

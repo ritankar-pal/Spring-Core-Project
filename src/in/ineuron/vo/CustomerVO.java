@@ -32,6 +32,26 @@ public class CustomerVO {
 	public void setTime(String time) {
 		this.time = time;
 	}
+	
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public String getPamt() {
+		return pamt;
+	}
+
+	public String getRate() {
+		return rate;
+	}
+
+	public String getTime() {
+		return time;
+	}
 
 	@Override
 	public String toString() {

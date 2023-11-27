@@ -36,6 +36,30 @@ public class CustomerBO {
 	public void setIntAmount(Float intAmount) {
 		this.intAmount = intAmount;
 	}
+	
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+
+	public Float getPamt() {
+		return pamt;
+	}
+
+	public Float getRate() {
+		return rate;
+	}
+
+	public Float getTime() {
+		return time;
+	}
+
+	public Float getIntAmount() {
+		return intAmount;
+	}
 
 	@Override
 	public String toString() {
