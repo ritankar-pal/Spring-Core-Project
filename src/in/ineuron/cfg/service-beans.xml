@@ -4,10 +4,13 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
     
-    
-  	<import resource="persistence-beans.xml"/>
-  	<import resource="service-beans.xml"/>
-  	<import resource="controller-beans.xml"/>
-				
+
+   <import resource="persistence-beans.xml"/>
+   
+   	<!-- Constructor Injection inside Service Layer-->
+   <bean id='customerService' class="in.ineuron.service.CustomerMgmntServiceImpl">
+   	<constructor-arg name='dao' ref='customerDao'/>
+   </bean>
+
 </beans>
 
