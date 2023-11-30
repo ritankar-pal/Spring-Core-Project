@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import in.ineuron.controller.MainController;
 import in.ineuron.vo.CustomerVO;
@@ -15,7 +16,7 @@ public class TestApp {
 		
 		//Reading the inputs::
 		Scanner scan = new Scanner(System.in);
-		
+			
 		System.out.print("Enter the Customer Name:: ");
 		String customerName = scan.next();
 		
@@ -41,13 +42,13 @@ public class TestApp {
 		
 		
 		//Starting the IOC Container::
-		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
-		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
-		reader.loadBeanDefinitions("in/ineuron/cfg/applicationContext.xml");	
+//		DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
+//		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
+//		reader.loadBeanDefinitions("in/ineuron/cfg/applicationContext.xml");	
 		System.out.println("***********Container Started*************\n");
-
-		
+		ClassPathXmlApplicationContext factory = new ClassPathXmlApplicationContext("in/ineuron/cfg/applicationContext.xml");
 		MainController controller = factory.getBean("customerController", MainController.class); //Created an Object of MainController
+		
 		
 		try {
 			String result = controller.processCustomer(customerVO);
@@ -58,7 +59,9 @@ public class TestApp {
 		}
 		
 		System.out.println("\n***********Container Stopper*************");
+		factory.close();
 		scan.close();
+		
 	}
 
 }
