@@ -2,7 +2,6 @@ package in.ineuron.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import javax.sql.DataSource;
 import in.ineuron.bo.CustomerBO;
 
@@ -11,7 +10,9 @@ import in.ineuron.bo.CustomerBO;
 public class CustomerDAOMySQLImpl implements ICustomerDAO {
 	
 	private DataSource dataSource;
+	
 	private static final String CUSTOMER_INSERT_QUERY = "insert into customer(cname, caddress, pamt, rate, time, intrAmt) values(?,?,?,?,?,?)";
+	
 	
 	public CustomerDAOMySQLImpl(DataSource dataSource) {
 		this.dataSource = dataSource;
